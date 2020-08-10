@@ -1,7 +1,7 @@
 	/******************************************************************/
 	/* This macro subsets the current table and compares it to the    */
 	/* orginal_table that was created before Delete Adjustment was    */
-	/* attempted to be made.									      */
+	/* attempted to be made. Great example of nested for loops.       */
 	/*Hailey Tucker, 07/2020                                          */
 	/******************************************************************/
 
