@@ -1,13 +1,14 @@
 /********************************************************************/
 /* Storing custom_sl_journal_flat before Deletion Adjustments are   */
 /* attempted to be made.                                            */
+/* Code needs to be run in a SAS env or SAS enabled env             */
 /* Hailey Tucker, 07/2020                                           */
 /********************************************************************/
 
 options mprint mlogic symbolgen;
 
-%macro ifrs17_store_table(slam_lasr_library_name=SAS SLAM LASR ($rgfstm::perspectiveVersion),
-table_name=custom_sl_journal_flat, testdir=$main::basepath/test_files, ICG_code = , ICG_code_short = , EOP_check = N);
+%macro store_table(library_name= ,
+table_name=, testdir=, ICG_code = , ICG_code_short = , EOP_check = N);
     %rsk_mkdirs_and_verify(&testdir.);
 
     libname SLAMLSR meta liburi = "SASLibrary?@name='&slam_lasr_library_name'" metaout=data;
